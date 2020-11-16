@@ -1,6 +1,6 @@
 {
     "name": "stephenjude/api-test-helper",
-    "description": "A collection of helper methods to for testing and debugging API endpoints",
+    "description": "A collection of helper methods for testing and debugging API endpoints",
     "keywords": [
         "stephenjude",
         "api-test-helper"
