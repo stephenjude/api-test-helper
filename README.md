@@ -64,9 +64,9 @@ Method | Description
  `dumpApiData()` | Dump api response data to the console. 
  `decodeResponse()` | Return a decoded api response data. 
  `logApiData()` | Write api response data to the log file.
- `assertApiSuccess()` | Assert api response is successful (success=true).
- `assertApiResponse($actualData)` | Assert api response data is same actual data (for a single item).
- `assertApiResponseCollection($actualData)` | Assert api response data is same actual data (for collection of items).
+ `assertApiSuccess()` | Assert api response data is successful: [success => true].
+ `assertApiResponse($actualData)` | Assert api response data is same actual data item.
+ `assertApiResponseCollection($actualData)` | Assert api response data is same actual collection items.
 
 ### Testing
 
