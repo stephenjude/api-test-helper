@@ -12,7 +12,7 @@ This is a collection of helper methods to for testing and debugging API endpoint
 You can install the package via composer:
 
 ```bash
-composer require stephenjude/api-test-helper
+composer require stephenjude/api-test-helper --dev
 ```
 
 
