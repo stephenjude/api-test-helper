@@ -19,36 +19,54 @@ composer require stephenjude/api-test-helper
 ## Usage
 
 ``` php
-use stephenjude\ApiTestHelper\WithApiHelper;
-...
-...
-use WithApiHelper;
 
-public function testGetAllUsers()
+namespace Tests\Apis;
+
+use App\Models\User;
+use Tests\TestCase;
+use Stephenjude\ApiTestHelper\WithApiHelper;
+
+class UserApiTest extends TestCase
 {
-    $actualUsers = User::all();
+    use WithApiHelper;
 
-    $this->response = $this->getJson('/users');
+    /**
+    * @test
+    */
+    public function testGetAllUsers()
+    {
+        $actualUsers = User::all();
 
-    // Assert response is 200
-    $this->response->assertOk();
+        $this->response = $this->getJson('/users');
 
-    // Dump api data to the console
-    $this->dumpApiData();
+        // Assert response is 200
+        $this->response->assertOk();
 
-    // Write api data to the log file
-    $this->logApiData();
+        // Dump api data to the console
+        $this->dumpApiData();
 
-    // Decode api response data
-    $responseData = $this->decodeResponse();
+        // Write api data to the log file
+        $this->logApiData();
 
-    // Assert API data is a collection 
-    $this->assertApiResponseCollection($actualUsers);
+        // Return a decoded api response data
+        $responseData = $this->decodeResponse();
+
+        // Assert API data is a collection 
+        $this->assertApiResponseCollection($actualUsers);
+    }
 }
 ```
 
-## Avaialble Helpers
+## Available Helper Methods 
 
+Method | Description 
+---------|----------
+ `dumpApiData()` | Dump api response data to the console. 
+ `decodeResponse()` | Return a decoded api response data. 
+ `logApiData()` | Write api response data to the log file.
+ `assertApiSuccess()` | Assert api response is successful (success=true).
+ `assertApiResponse($actualData)` | Assert api response data is same actual data (for a single item).
+ `assertApiResponseCollection($actualData)` | Assert api response data is same actual data (for collection of items).
 
 ### Testing
 
