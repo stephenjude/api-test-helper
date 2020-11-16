@@ -61,8 +61,8 @@ class UserApiTest extends TestCase
 
 Method | Description 
 ---------|----------
+ `decodeApiResponse()` | Returns a decoded api response data. 
  `dumpApiData()` | Dump api response data to the console. 
- `decodeResponse()` | Return a decoded api response data. 
  `logApiData()` | Write api response data to the log file.
  `assertApiSuccess()` | Assert api response data is successful: [success => true].
  `assertApiResponse($actualData)` | Assert api response data is same actual data item.

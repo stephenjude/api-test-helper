@@ -33,7 +33,7 @@ trait WithApiHelper
 
         $this->assertApiSuccess();
 
-        $response = $this->decodeResponse();
+        $response = $this->decodeApiResponse();
 
         $this->assertNotEmpty($response['data']['id']);
 
@@ -53,7 +53,7 @@ trait WithApiHelper
      */
     public function logApiData()
     {
-        logger($this->decodeResponse());
+        logger($this->decodeApiResponse());
     }
 
     /**
@@ -61,13 +61,13 @@ trait WithApiHelper
      */
     public function dumpApiData()
     {
-        dd($this->decodeResponse());
+        dd($this->decodeApiResponse());
     }
 
     /**
      * @return mixed
      */
-    public function decodeResponse()
+    public function decodeApiResponse()
     {
         return json_decode($this->response->getContent(), true);
     }
