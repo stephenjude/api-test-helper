@@ -30,7 +30,7 @@ class UserApiTest extends TestCase
 {
     use WithApiHelper;
 
-    /**
+    /*
     * @test
     */
     public function testGetAllUsers()
