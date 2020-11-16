@@ -48,7 +48,7 @@ class UserApiTest extends TestCase
         $this->logApiData();
 
         // Return a decoded api response data
-        $responseData = $this->decodeResponse();
+        $responseData = $this->decodeApiResponse();
 
         // Assert API data is a collection 
         $this->assertApiResponseCollection($actualUsers);
