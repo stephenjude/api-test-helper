@@ -69,6 +69,6 @@ trait WithApiHelper
      */
     public function decodeApiResponse()
     {
-        return json_decode($this->response->getContent(), true);
+        return json_decode($this->response->json(), true);
     }
 }
