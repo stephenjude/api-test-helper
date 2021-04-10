@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 
 trait WithApiHelper
 {
-    private $response;
+    public $response;
 
     /**
      * @param Array|Collection|mixed $actualData
