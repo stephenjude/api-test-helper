@@ -59,9 +59,9 @@ trait WithApiHelper
     /**
      * @return void
      */
-    public function dumpApiData()
+    public function dumpApiData(...$vars)
     {
-        dd($this->decodeApiResponse());
+        dd($this->decodeApiResponse(), func_get_args());
     }
 
     /**
@@ -69,6 +69,6 @@ trait WithApiHelper
      */
     public function decodeApiResponse()
     {
-        return json_decode($this->response->getContent(), true);
+        return $this->response->decodeResponseJson();
     }
 }
