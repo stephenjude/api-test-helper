@@ -69,6 +69,13 @@ trait WithApiHelper
      */
     public function decodeApiResponse()
     {
+        
+        throw_if(
+            is_null($this->response),
+            new Exception('API response was not initialized. Check the ApiTestHelper docs for more details: https://github.com/stephenjude/api-test-helper !')
+        );
+        
+        
         return $this->response->decodeResponseJson();
     }
 }
