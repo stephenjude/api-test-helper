@@ -3,6 +3,7 @@
 namespace Stephenjude\ApiTestHelper;
 
 use Illuminate\Support\Arr;
+use Exception;
 
 trait WithApiHelper
 {
